@@ -1,8 +1,8 @@
 def input_data():
     employees = []
     while True:
-        input_str = input("Enter employee data (name days_absent) or 'end to finish: ")
-        if input_str == "end":
+        input_str = input("Enter employee data (name days_absent) or $ to finish: ")
+        if input_str == "$":
             break
         else:
             employee_data = input_str.split()
