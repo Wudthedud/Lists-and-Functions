@@ -2,12 +2,14 @@ namesList = []
 hourlyCost = 12
 repeat = True
 
+# Checks in child, adds name to roll
 def checkin():
     name = input("Enter your child's name: ").title().strip()
     namesList.append(name)
     print(f"{name} has been added to the roll\n")
     print("-" * 30)
 
+# Removes names from roll
 def checkout():
     name = input("Enter your child's name: ").title().strip()
     try:
@@ -17,6 +19,7 @@ def checkout():
         print(f"{name} is not in the roll")
         print("-" * 30)
 
+# Calculates cost for amount of hours
 def cost():
     try:
         hours = int(input("Enter amount of hours: "))
@@ -24,6 +27,7 @@ def cost():
         print("-" * 30)
     except:
         print("Please enter the number of hours as an integer! ")
+        print("-" * 30)
 
 def roll():
     if len(namesList) > 0:

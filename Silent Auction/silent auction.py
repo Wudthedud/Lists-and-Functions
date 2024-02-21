@@ -1,19 +1,25 @@
 def silent_auction():
     # Get auction details from the auction manager
     item = input("What is the auction for? ")
-    reserve_price = float(input("What is the reserve price? "))
+    try: 
+        reserve_price = float(input("What is the reserve price? "))
+    except:
+        print("You have not entered a number, the bidding will start at $0")
+        reserve_price = 0
 
-    print(f"The auction for the {item} has started! Type 'end' to end auction.")
+    print("-" * 30)
+    print(f"The auction for the {item} has started! Type '-1' to end auction.")
 
     highest_bid = 0
 
     while True:
+        print("-" * 30)
         print(f"\nHighest bid so far is ${highest_bid}")
 
         bid_input = input("What is your bid? ")
 
         # Check for termination signal
-        if bid_input == 'end':
+        if bid_input == '-1':
             break
 
         try:
@@ -26,6 +32,7 @@ def silent_auction():
         if bid > highest_bid:
             highest_bid = bid
             print(f"Highest bid so far is ${highest_bid}")
+            
         else:
             print(f"Please enter a higher bid than ${highest_bid}")
 

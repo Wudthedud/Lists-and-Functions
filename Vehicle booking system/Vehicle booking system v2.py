@@ -27,9 +27,7 @@ def main():
         seats_needed = int(input("Please enter the number of seats required (Type -1 to quit): "))
         if seats_needed == -1:
             break
-
         display_vehicles(vehicles, seats_needed)
-
         vehicle_number = int(input("Enter a number to book: "))
         if 1 <= vehicle_number <= len(vehicles):
             selected_vehicle = vehicles[vehicle_number - 1]
